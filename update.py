@@ -17,8 +17,7 @@ version = data.get("tag_name", "").lstrip("v")
 release_date = data.get("published_at", datetime.utcnow().isoformat())
 body = data.get("body", "Latest release of SceneBox.")
 
-# Locate the .ipa asset
-# Filter specifically for the iOS build (matches *.ipa and excludes tvOS)
+# Find only the iOS .ipa (skipping tvOS assets)
 ipa_asset = next(
     (
         a for a in data.get("assets", [])
@@ -28,8 +27,7 @@ ipa_asset = next(
 )
 
 if not ipa_asset:
-    raise SystemExit("No iOS IPA asset found in latest release.")if not ipa_asset:
-    raise SystemExit("No IPA asset found in latest release.")
+    raise SystemExit("No iOS IPA asset found in latest release.")
 
 ipa_url = ipa_asset["browser_download_url"]
 size = ipa_asset["size"]
@@ -44,7 +42,7 @@ source_data = {
             "developerName": "Don Bytyqi",
             "subtitle": "Track movies, TV shows, and anime",
             "localizedDescription": "SceneBox is an app to track your favorite movies, series, and anime.",
-            "iconURL": "https://raw.githubusercontent.com/donbytyqi/scenebox/main/assets/icon.png",
+            "iconURL": "https://avatars.githubusercontent.com/u/10412852?v=4",
             "tintColor": "FF3366",
             "version": version,
             "versionDate": release_date,
