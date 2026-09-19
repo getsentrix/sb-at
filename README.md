@@ -1,5 +1,7 @@
 # Altstore Repo for SceneBox
-Altstore Link:```bash
-https://getsentrix.github.io/sb-at/apps.json```   
+```bash
+https://getsentrix.github.io/sb-at/apps.json 
+```   
+https://getsentrix.github.io/sb-at/apps.json 
 
 Copy and paste this to your favorite signers, such as Feather, SideStore, Esign, and others!
