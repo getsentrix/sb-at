@@ -182,12 +182,12 @@
 
     .actions-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 10px;
       margin-bottom: 26px;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 520px) {
       .actions-grid {
         grid-template-columns: 1fr;
       }
@@ -287,15 +287,18 @@
         <a id="sidestore-link" href="sidestore://source?url=https://getsentrix.github.io/sb-at/apps.json" class="btn btn-secondary">
           ⚡ Add to SideStore
         </a>
+        <a id="livecontainer-link" href="livecontainer://source?url=https://getsentrix.github.io/sb-at/apps.json" class="btn btn-secondary">
+          📦 Add to LiveContainer
+        </a>
       </div>
 
       <div class="instructions">
         <strong>Compatible Sideloaders:</strong>
-        <p style="margin-top: 4px; margin-bottom: 10px;">SideStore, AltStore, Feather, ESign, Scarlet, and Sideloadly.</p>
+        <p style="margin-top: 4px; margin-bottom: 10px;">SideStore, AltStore, LiveContainer, Feather, ESign, Scarlet, and Sideloadly.</p>
         <strong>Manual Setup:</strong>
         <ol>
           <li>Copy the repository link above.</li>
-          <li>In your sideloader, go to the <strong>Sources</strong> tab.</li>
+          <li>In your sideloader (AltStore, SideStore, or LiveContainer), go to the <strong>Sources</strong> tab.</li>
           <li>Tap <strong>+</strong> and paste the link.</li>
         </ol>
       </div>
@@ -316,6 +319,7 @@
       repoUrlEl.textContent = repoUrl;
       document.getElementById('altstore-link').href = 'altstore://source?url=' + encodeURIComponent(repoUrl);
       document.getElementById('sidestore-link').href = 'sidestore://source?url=' + encodeURIComponent(repoUrl);
+      document.getElementById('livecontainer-link').href = 'livecontainer://source?url=' + encodeURIComponent(repoUrl);
     }
 
     function copyRepoURL() {
